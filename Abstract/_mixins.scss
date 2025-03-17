@@ -1,0 +1,277 @@
+@mixin container($containerName: "") {
+  @media (max-width: 575px) {
+    .container#{if($containerName == "" ,""  , "-" + $containerName)} {
+      width: 100%;
+      margin: 0 auto;
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+  }
+  @media (min-width: 576px) {
+    .container#{if($containerName == "" ,""  , "-" + $containerName)} {
+      width: if(
+        $containerName == "" or $containerName == "sm",
+        540px,
+        100%
+      );
+      margin: 0 auto;
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+  }
+  @media (min-width: 768px) {
+    .container#{if($containerName == "" ,""  , "-" + $containerName)} {
+      width: if(
+        $containerName == "" or $containerName == "sm" or $containerName == "md",
+        720px,
+        100%
+      );
+      margin: 0 auto;
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+  }
+  @media (min-width: 992px) {
+    .container#{if($containerName == "" ,""  , "-" + $containerName)} {
+      width: if(
+        $containerName == "" or $containerName == "sm" or $containerName == "md"
+          or $containerName == "lg",
+        960px,
+        100%
+      );
+      margin: 0 auto;
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .container#{if($containerName == "" ,""  , "-" + $containerName)} {
+      width: if(
+        $containerName == "" or $containerName == "sm" or $containerName == "md"
+          or $containerName == "lg" or $containerName == "xl",
+        1140px,
+        100%
+      );
+      margin: 0 auto;
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+  }
+  @media (min-width: 1400px) {
+    .container#{if($containerName == "" ,""  , "-" + $containerName)} {
+      width: if(
+        $containerName == "" or $containerName == "sm" or $containerName == "md"
+          or $containerName == "lg" or $containerName == "xl" or $containerName
+          == "xxl",
+        1320px,
+        100%
+      );
+      margin: 0 auto;
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+  }
+}
+
+@mixin cols() {
+  @for $i from 1 through 12 {
+    .col-#{$i} {
+      flex: 0 0 100%;
+      max-width: $i / 12 * 100%;
+    }
+  }
+  @media (max-width: 575px) {
+    @for $i from 1 through 12 {
+      .col-#{$i} {
+        flex: 0 0 100%;
+        max-width: $i / 12 * 100%;
+      }
+    }
+  }
+  @media (min-width: 576px) {
+    @for $i from 1 through 12 {
+      .col-sm-#{$i} {
+        flex: 0 0 100%;
+        max-width: $i / 12 * 100%;
+      }
+    }
+  }
+  @media (min-width: 768px) {
+    @for $i from 1 through 12 {
+      .col-md-#{$i} {
+        flex: 0 0 100%;
+        max-width: $i / 12 * 100%;
+      }
+    }
+  }
+  @media (min-width: 992px) {
+    @for $i from 1 through 12 {
+      .col-lg-#{$i} {
+        flex: 0 0 100%;
+        max-width: $i / 12 * 100%;
+      }
+    }
+  }
+  @media (min-width: 1200px) {
+    @for $i from 1 through 12 {
+      .col-xl-#{$i} {
+        flex: 0 0 100%;
+        max-width: $i / 12 * 100%;
+      }
+    }
+  }
+  @media (min-width: 1400px) {
+    @for $i from 1 through 12 {
+      .col-xxl-#{$i} {
+        flex: 0 0 100%;
+        max-width: $i / 12 * 100%;
+      }
+    }
+  }
+}
+
+@mixin row() {
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    > div {
+      width: 100%;
+    }
+  }
+}
+
+@mixin gutter {
+  @for $i from 0 through 5 {
+    .g-#{$i} {
+      > * {
+        padding: #{$i * 5}px;
+      }
+    }
+  }
+  @for $i from 0 through 5 {
+    .gx-#{$i} {
+      > * {
+        padding-right: #{$i * 5}px;
+        padding-left: #{$i * 5}px;
+      }
+    }
+  }
+  @for $i from 0 through 5 {
+    .gy-#{$i} {
+      > * {
+        padding-top: #{$i * 5}px;
+        padding-bottom: #{$i * 5}px;
+      }
+    }
+  }
+}
+
+@mixin margins {
+  @for $i from 1 through 5 {
+    .m-#{$i} {
+      margin: $i * 5px;
+    }
+  }
+  @for $i from 1 through 5 {
+    .mt-#{$i} {
+      margin-top: $i * 5px;
+    }
+  }
+  @for $i from 1 through 5 {
+    .mb-#{$i} {
+      margin-bottom: $i * 5px;
+    }
+  }
+  @for $i from 1 through 5 {
+    .ms-#{$i} {
+      margin-left: $i * 5px;
+    }
+  }
+  @for $i from 1 through 5 {
+    .me-#{$i} {
+      margin-right: $i * 5px;
+    }
+  }
+  @for $i from 1 through 5 {
+    .mx-#{$i} {
+      margin-right: $i * 5px;
+      margin-left: $i * 5px;
+    }
+  }
+  @for $i from 1 through 5 {
+    .my-#{$i} {
+      margin-top: $i * 5px;
+      margin-bottom: $i * 5px;
+    }
+  }
+}
+
+@mixin paddings {
+  @for $i from 1 through 5 {
+    .p-#{$i} {
+      padding: $i * 5px;
+    }
+  }
+  @for $i from 1 through 5 {
+    .pt-#{$i} {
+      padding-top: $i * 5px;
+    }
+  }
+  @for $i from 1 through 5 {
+    .pb-#{$i} {
+      padding-bottom: $i * 5px;
+    }
+  }
+  @for $i from 1 through 5 {
+    .ps-#{$i} {
+      padding-left: $i * 5px;
+    }
+  }
+  @for $i from 1 through 5 {
+    .pe-#{$i} {
+      padding-right: $i * 5px;
+    }
+  }
+  @for $i from 1 through 5 {
+    .px-#{$i} {
+      padding-right: $i * 5px;
+      padding-left: $i * 5px;
+    }
+  }
+  @for $i from 1 through 5 {
+    .py-#{$i} {
+      padding-top: $i * 5px;
+      padding-bottom: $i * 5px;
+    }
+  }
+}
+
+@mixin fontSizes {
+  @for $i from 1 through 6 {
+    .fs-#{$i} {
+      font-size: $i * 9px;
+    }
+    @media (max-width: 768px) {
+      .fs-sm-#{$i} {
+        font-size: $i * 6px;
+      }
+    }
+  }
+}
+
+@mixin fontWeights {
+  @for $i from 1 through 5 {
+    .fw-#{$i} {
+      font-weight: $i * 150;
+    }
+  }
+}
+
+$displays: none, inline, block, inline-block, flex;
+@mixin displays {
+  @each $dis in $displays {
+    .d-#{$dis} {
+      display: $dis;
+    }
+  }
+}

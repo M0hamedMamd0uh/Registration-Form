@@ -1,0 +1,46 @@
+@import "../Abstract/placeholders";
+@import "../Abstract/variables";
+
+body {
+  @extend %center;
+  input,
+  button {
+    width: 100%;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+  }
+  input {
+    color: #fff;
+    background-color: #1f1f1fa3;
+  }
+  .btn {
+    a {
+      transition: 0.3s linear;
+      &:hover {
+        background-color: $primary-color-hover;
+      }
+    }
+  }
+
+  h4 span {
+    a {
+      transition: 0.3s linear;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+
+  .remember-me {
+    @extend %center;
+    justify-content: flex-start;
+
+    input {
+      margin-right: 10px;
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
